@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "./variable.scss";
+@import "./mixin.scss";
+
+body{
+  font-family: 'Lato', sans-serif;
+}
+
+.page-view{
+  width: 55%;
+  margin: auto;
+  .form-login{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    margin-top: 35px;
+    .overview-login{
+      .title{
+        margin-bottom: 10px;
+        span{
+          font-weight: bolder;
+          color:black;
+          font-size: 40px;
+        }
+      }
+      .detail{
+        p{
+          font-weight: bolder;
+          font-size: 25px;
+          color:rgb(129, 129, 129);
+        }
+      }
+    }
+    form{
+      input{
+        width: 100%;
+        padding: 7px 15px;
+        font-size: 14px;
+        border-radius: 5px;
+        border: 1px solid rgb(230, 230, 230);
+        &:focus{
+          outline: none;
+        }
+      }
+      .input-email{
+        margin-top: 35px;
+        margin-bottom: 20px;
+      }
+      .input-password{
+        margin-bottom: 20px;
+      }
+      .btn-submit{
+        width: 100%;
+        border: none;
+        background-color: black;
+        color:white;
+        font-weight: 600;
+        font-size: 14px;
+        padding: 7px;
+        border-radius: 5px;
+        margin-top: 10px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}

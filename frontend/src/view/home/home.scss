@@ -1,0 +1,62 @@
+
+
+  .overview{
+    padding: 10px;
+    margin-top: 15px;
+    text-align: center;
+    .title{
+      margin-bottom: 10px;
+      span{
+        font-size: 40px;
+        font-weight: 600;
+      }
+    }
+    .description{
+      margin-top: 10px;
+      p{
+        color:rgb(129, 129, 129);
+        font-weight: bolder;
+        font-size: 25px;
+      }
+    }
+    .button-click{
+      margin-top: 40px;
+      a{
+        text-decoration: none;
+        display: block;
+        margin-bottom: 15px;
+        .create-new{
+          width: 100%;
+          border: 1px solid rgb(180, 180, 180);
+          border-radius: 5px;
+          padding: 7px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          align-self: center;
+          span{
+            color:black;
+            font-size: 15px;
+            font-weight: 600;
+            svg{
+              font-size: 17px;
+              margin-top: -3px;
+              margin-right: 3px;
+            }
+          }
+        }
+        .view-ticket{
+          @extend .create-new;
+          background-color: black;
+          border: none;
+          span{
+            color:white;
+            font-weight:normal;
+            svg{
+              margin-right: 7px;
+            }
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,96 @@
+
+.view-ticket{
+  padding:20px;
+  a{
+    width: 120px;
+    display: block;
+    text-decoration: none;
+    .button-back{
+      padding: 10px;
+      border: 1px solid black;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 15px;
+      color:black;
+      font-weight: 600;
+      span{
+        svg{
+          font-size: 16px;
+          margin-top: -2px;
+          margin-right: 3px;
+        }
+      }
+    }
+  }
+  .manage-ticket{
+    margin-top: 30px;
+    .title{
+      text-align: center;
+      span{
+        font-weight: 600;
+        font-size: 25px;
+        color:black;
+      }
+    }
+    table{
+      width: 100%;
+      margin-top: 20px;
+      .tr-body{
+        width: 100%;
+        background-color: #eee;
+        border-radius: 5px;
+        th{
+          padding:10px;
+          font-size: 15px;
+          font-weight: 600;
+          text-align: center;
+        }
+      }
+      .td-body{
+        td{
+          padding-top:25px;
+          font-size: 15px;
+          font-weight: 600;
+          .news{
+            width:70px;
+            background-color: rgb(11, 155, 11);
+            border-radius: 25px;
+            display: flex;
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            text-align: center;
+            span{
+              color:white;
+              font-size: 14px;
+              padding-bottom: 4px;
+              letter-spacing: 1.2px;
+              font-weight: 600;
+            }
+          }
+          .btn-view{
+            text-align: center;
+            border: 1px solid rgba(129,129,129);
+            display: flex;
+            width: 90px;
+            justify-content: right;
+            align-items: right;
+            margin: auto;
+            border-radius: 5px;
+            a{
+              span{
+                font-weight: 600;
+                color:black;
+                font-size: 13px;
+              }
+            }
+          }
+        }
+      }
+      tr td{
+        text-align: center;
+      }
+    }
+  }
+}
