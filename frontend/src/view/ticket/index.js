@@ -4,31 +4,21 @@ import { Link } from 'react-router-dom';
 import * as Routes from "../../router";
 import {ImBackward} from "react-icons/im";
 import {useSelector, useDispatch} from "react-redux"
-import {getTickets, reset, clearState} from "../../features/tickets/ticketSlice";
+import {getTickets, clearState} from "../../features/tickets/ticketSlice";
+import Loader from '../../components/Loader';
 import './ticket.scss';
 
 export default function Ticket() {
 
-  const {tickets, isSuccess} = useSelector(state => state.ticket)
+  const {tickets, isPending} = useSelector(state => state.ticket)
   const dispatch= useDispatch()
 
   useEffect(() =>{
-    return () =>{
-      if(isSuccess){
-        dispatch(clearState())
-      }
-    }
-  }, [isSuccess, dispatch])
-
-  useEffect(() =>{
-
     dispatch(getTickets())
-
-  }, [dispatch, isSuccess])
-
-  // if(isPending){
-  //   return <Loading />
-  // }
+    return () =>{
+      dispatch(clearState())
+    }
+  }, [dispatch])
 
   return (
     <>
@@ -52,7 +42,7 @@ export default function Ticket() {
                   <th>Status</th>
                   <th>View</th>
                 </tr>
-                {tickets.map((data, index) =>(
+                {!isPending && tickets && tickets.map((data, index) =>(
                   <tr className='td-body' key={index}>
                     <td>{new Date(data.createdAt).toLocaleString('en-us')}</td>
                     <td>{data.product}</td>
@@ -62,6 +52,11 @@ export default function Ticket() {
                 ))}
               </tbody>
             </table>
+            {isPending && (
+                  <div>
+                    <Loader />
+                  </div>
+                )}
           </div>
         </div>
       </div>

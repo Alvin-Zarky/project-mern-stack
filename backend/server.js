@@ -13,13 +13,10 @@ connectionDb()
 app.use(express.json())
 app.use(express.urlencoded({ extended:false }))
 
-
-
 app.use('/api/users', require("./router/userRouter"))
-
 app.use('/api/tickets', require("./router/ticketRoute"))
 
-if(process.env=== 'production'){
+if(process.env.NODE_ENV === 'production'){
   app.use(express.static(path.join(__dirname, '../frontend/build')))
   app.get('*', (req, res) =>{
     res.sendFile(__dirname, '../', 'frontend', 'build', 'index.html')
