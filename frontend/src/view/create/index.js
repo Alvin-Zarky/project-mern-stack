@@ -4,10 +4,9 @@ import { Link, useHistory } from 'react-router-dom';
 import * as Routes from "../../router";
 import {ImBackward} from "react-icons/im";
 import {useSelector, useDispatch} from "react-redux";
-import { createTicket, reset, clearState } from '../../features/tickets/ticketSlice';
+import { createTicket, clearState } from '../../features/tickets/ticketSlice';
 import './create.scss';
 import {toast} from "react-toastify";
-import Loading from '../../components/loading';
 
 export default function Create() {
 
@@ -48,7 +47,9 @@ export default function Create() {
       history.push(Routes.TICKET)
     }
     
-    dispatch(clearState())
+    return () => {
+      dispatch(clearState())
+    }
   }, [isSuccess, history, dispatch, isError, message])
 
 
